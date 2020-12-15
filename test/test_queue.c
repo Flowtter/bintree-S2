@@ -19,11 +19,11 @@ void create_queue_test() {
 void create_queue_bintree_test() {
     printf("CREATE QUEUE BINTREE TEST\n");
     queue *q = queue_init();
-    bt *bintree = bintree_init(2);
+    btree *bintree = bintree_init(2);
     enqueue(q, bintree);
-    bt *bintree_second = bintree_init(3);
+    btree *bintree_second = bintree_init(3);
     enqueue(q, bintree_second);
-    bt *bintree_third = bintree_init(4);
+    btree *bintree_third = bintree_init(4);
     enqueue(q, bintree_third);
     queue_print(q);
     free(q);
@@ -55,11 +55,4 @@ void queue_is_empty_test() {
     printf("%zu\n", is_empty(q));
     UNUSED(dequeue(q));
     printf("%zu\n", is_empty(q));
-}
-
-int main() {
-    create_queue_test();
-    create_queue_bintree_test();
-    dequeue_test();
-    queue_is_empty_test();
 }

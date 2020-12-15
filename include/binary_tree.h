@@ -4,14 +4,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct bintree bt;
+typedef struct bintree btree;
 struct bintree {
     int key;
     struct bintree *left;
     struct bintree *right;
 };
 
-bt *bintree_init(int value);
-void bintree_free(bt *bintree);
+btree *bintree_init(int value);
+void bintree_free(btree *bintree);
+size_t size(btree *bintree);
 
 #endif // BINARY_TREE
