@@ -1,3 +1,4 @@
 bintree
 bintreetest
 .vscode/*
+include/*.h.gch
