@@ -11,7 +11,7 @@ struct bintree {
     struct bintree *right;
 };
 
-bt* bintree_init(int value);
+bt *bintree_init(int value);
 void bintree_free(bt *bintree);
 
 #endif // BINARY_TREE
