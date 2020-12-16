@@ -73,6 +73,7 @@ size_t equality(btree *bintree1, btree *bintree2) {
                && equality(bintree1->left, bintree2->left)
                && equality(bintree1->right, bintree2->right);
     } else if (!bintree1 ^ !bintree2) {
+        // equivalent to bintree1 != NULL ^
         return 0;
     } else {
         return 1;
