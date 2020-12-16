@@ -42,7 +42,6 @@ int height(btree *bintree) {
     return 1 + max(height(bintree->left), height(bintree->right));
 }
 
-
 void breadth_first_search(btree *bintree) {
     queue *q = queue_init();
     enqueue(q, bintree);
