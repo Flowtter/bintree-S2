@@ -14,5 +14,6 @@ struct bintree {
 btree *bintree_init(int value);
 void bintree_free(btree *bintree);
 size_t size(btree *bintree);
+int height(btree *bintree);
 
 #endif // BINARY_TREE

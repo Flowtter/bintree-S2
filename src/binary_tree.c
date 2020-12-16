@@ -1,6 +1,10 @@
 #include "binary_tree.h"
 #include "queue.h"
 
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
 btree *bintree_init(int value) {
     btree *tree = malloc(sizeof(tree));
     tree->key = value;
@@ -30,4 +34,10 @@ size_t size(btree *bintree) {
             enqueue(q, (((btree *) (node->self))->right));
     }
     return counter;
+}
+
+int height(btree *bintree) {
+    if (!bintree)
+        return -1;
+    return 1 + max(height(bintree->left), height(bintree->right));
 }

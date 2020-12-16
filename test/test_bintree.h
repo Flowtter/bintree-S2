@@ -5,5 +5,6 @@
 #include <stdlib.h>
 
 void size_test();
+void height_test();
 
 #endif // TEST_BINTREE

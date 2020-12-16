@@ -7,5 +7,6 @@ int main() {
     dequeue_test();
     queue_is_empty_test();
     size_test();
+    height_test();
     return 0;
 }
