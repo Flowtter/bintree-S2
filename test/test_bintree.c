@@ -30,3 +30,24 @@ void height_test() {
     printf("2, %d\n", height(init));
     bintree_free(init);
 }
+
+void breadth_first_search_test() {
+    printf("BREADTH FIRST SEARCH TEST\n");
+    btree *init = bintree_init(0);
+    btree *left = bintree_init(1);
+    btree *right = bintree_init(2);
+    btree *leftleft = bintree_init(3);
+    btree *leftright = bintree_init(4);
+    btree *rightleft = bintree_init(5);
+    btree *rightright = bintree_init(6);
+    init->left = left;
+    init->right = right;
+    init->left->left = leftleft;
+    init->left->right = leftright;
+    init->right->left = rightleft;
+    init->right->right = rightright;
+
+    breadth_first_search(init);
+    
+    bintree_free(init);
+}

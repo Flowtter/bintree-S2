@@ -41,3 +41,29 @@ int height(btree *bintree) {
         return -1;
     return 1 + max(height(bintree->left), height(bintree->right));
 }
+
+
+void breadth_first_search(btree *bintree) {
+    queue *q = queue_init();
+    enqueue(q, bintree);
+    enqueue(q, NULL);
+    printf("[");
+    while (!is_empty(q)) {
+        queue *node = dequeue(q);
+        if (node->self) {
+            printf("%d ", ((btree *) (node->self))->key);
+            if (((btree *) (node->self))->left)
+                enqueue(q, (((btree *) (node->self))->left));
+            if (((btree *) (node->self))->right)
+                enqueue(q, (((btree *) (node->self))->right));
+        } else {
+            if (is_empty(q))
+                break;
+            else {
+                printf("] [");
+                enqueue(q, NULL);
+            }
+        }
+    }
+    printf("]\n");
+}

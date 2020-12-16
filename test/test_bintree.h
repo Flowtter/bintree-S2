@@ -6,5 +6,6 @@
 
 void size_test();
 void height_test();
+void breadth_first_search_test();
 
 #endif // TEST_BINTREE

@@ -15,5 +15,6 @@ btree *bintree_init(int value);
 void bintree_free(btree *bintree);
 size_t size(btree *bintree);
 int height(btree *bintree);
+void breadth_first_search(btree *bintree);
 
 #endif // BINARY_TREE
