@@ -10,5 +10,6 @@ int main() {
     size_test();
     height_test();
     breadth_first_search_test();
+    equality_test();
     return 0;
 }

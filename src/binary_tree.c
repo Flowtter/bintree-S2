@@ -66,3 +66,15 @@ void breadth_first_search(btree *bintree) {
     }
     printf("]\n");
 }
+
+size_t equality(btree *bintree1, btree *bintree2) {
+    if (bintree1 && bintree2) {
+        return bintree1->key == bintree2->key
+               && equality(bintree1->left, bintree2->left)
+               && equality(bintree1->right, bintree2->right);
+    } else if (!bintree1 ^ !bintree2) {
+        return 0;
+    } else {
+        return 1;
+    }
+}

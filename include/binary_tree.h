@@ -16,5 +16,6 @@ void bintree_free(btree *bintree);
 size_t size(btree *bintree);
 int height(btree *bintree);
 void breadth_first_search(btree *bintree);
+size_t equality(btree *bintree1, btree *bintree2);
 
 #endif // BINARY_TREE

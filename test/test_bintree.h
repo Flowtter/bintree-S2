@@ -7,5 +7,6 @@
 void size_test();
 void height_test();
 void breadth_first_search_test();
+void equality_test();
 
 #endif // TEST_BINTREE
