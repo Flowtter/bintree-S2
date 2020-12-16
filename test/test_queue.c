@@ -49,10 +49,10 @@ void dequeue_test() {
 void queue_is_empty_test() {
     printf("QUEUE IS EMPTY TEST\n");
     queue *q = queue_init();
-    printf("%zu\n", is_empty(q));
+    printf("1, %zu\n", is_empty(q));
     int mon_int = 2;
     enqueue(q, &mon_int);
-    printf("%zu\n", is_empty(q));
+    printf("0, %zu\n", is_empty(q));
     UNUSED(dequeue(q));
-    printf("%zu\n", is_empty(q));
+    printf("1, %zu\n", is_empty(q));
 }
