@@ -12,5 +12,7 @@ int main() {
     height_test();
     breadth_first_search_test();
     equality_test();
+    is_sub_tree_test();
+    is_degenerate_test();
     return 0;
 }

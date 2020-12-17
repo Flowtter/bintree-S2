@@ -90,3 +90,58 @@ void equality_test() {
     bintree_free(archi_init);
     bintree_free(key_init);
 }
+
+void is_sub_tree_test() {
+    printf("SUB TREE TEST\n");
+    btree *init = bintree_init(0);
+    btree *left = bintree_init(1);
+    btree *right = bintree_init(2);
+
+    init->left  = left;
+    init->right = right;
+
+    btree *same_init = bintree_init(0);
+    btree *same_left = bintree_init(1);
+    btree *same_right = bintree_init(2);
+
+    same_init->left  = same_left;
+    same_init->right = same_right;
+
+    printf("1, %zu\n", is_sub_tree(init, same_init));
+
+    btree *archi_init = bintree_init(2);
+
+    printf("1, %zu\n", is_sub_tree(init, archi_init));
+
+    btree *key_init = bintree_init(0);
+    btree *key_left = bintree_init(3);
+    btree *key_right = bintree_init(2);
+
+    key_init->left  = key_left;
+    key_init->right = key_right;
+    
+    printf("0, %zu\n", is_sub_tree(init, key_init));
+
+    bintree_free(init);
+    bintree_free(archi_init);
+    bintree_free(key_init);
+}
+
+void is_degenerate_test() {
+    printf("DEGENERATE TEST\n");
+    btree *init = bintree_init(0);
+    btree *left = bintree_init(1);
+    btree *right = bintree_init(2);
+
+    printf("1, %zu\n", is_degenerate(init));    
+    init->left  = left;
+    printf("1, %zu\n", is_degenerate(init)); 
+    init->right = right;
+    printf("0, %zu\n", is_degenerate(init));
+    init->right = NULL;
+    btree *leftleft = bintree_init(3);
+    init->left->left = leftleft;
+    printf("1, %zu\n", is_degenerate(init));
+    
+    bintree_free(init);
+}

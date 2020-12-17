@@ -79,3 +79,21 @@ size_t equality(btree *bintree1, btree *bintree2) {
         return 1;
     }
 }
+
+size_t is_sub_tree(btree *bintree1, btree *bintree2) {
+    size_t result = equality(bintree1, bintree2);
+    if (bintree1->left)
+        result |= is_sub_tree(bintree1->left, bintree2);
+    if (bintree1->right)
+        result |= is_sub_tree(bintree1->right, bintree2);
+    return result;
+}
+
+
+size_t is_degenerate(btree *bintree) {
+    if (!bintree)
+        return 1;
+    if (bintree->left != NULL && bintree->right != NULL)
+        return 0;
+    return is_degenerate(bintree->right) && is_degenerate(bintree->left);
+}
