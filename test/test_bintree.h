@@ -10,5 +10,6 @@ void breadth_first_search_test();
 void equality_test();
 void is_sub_tree_test();
 void is_degenerate_test();
+void is_perfect_test();
 
 #endif // TEST_BINTREE

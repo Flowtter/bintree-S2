@@ -89,11 +89,34 @@ size_t is_sub_tree(btree *bintree1, btree *bintree2) {
     return result;
 }
 
-
 size_t is_degenerate(btree *bintree) {
     if (!bintree)
         return 1;
     if (bintree->left != NULL && bintree->right != NULL)
         return 0;
     return is_degenerate(bintree->right) && is_degenerate(bintree->left);
+}
+
+size_t is_perfect(btree *bintree) {
+    queue *q = queue_init();
+    enqueue(q, bintree);
+    enqueue(q, NULL);
+    size_t counter = 2;
+    size_t index = 0;
+    while (!is_empty(q)) {
+        queue *elt = dequeue(q);
+        if (!elt->self && is_empty(q))
+            break;
+        else if (!elt->self) {
+            counter <<= 1;
+            enqueue(q, NULL);
+        } else {
+            index++;
+            if (((btree *) (elt->self))->left)
+                enqueue(q, ((btree *) (elt->self))->left);
+            if (((btree *) (elt->self))->right)
+                enqueue(q, ((btree *) (elt->self))->right);
+        }
+    }
+    return index == counter-1;
 }

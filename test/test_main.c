@@ -14,5 +14,6 @@ int main() {
     equality_test();
     is_sub_tree_test();
     is_degenerate_test();
+    is_perfect_test();
     return 0;
 }

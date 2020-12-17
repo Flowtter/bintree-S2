@@ -145,3 +145,31 @@ void is_degenerate_test() {
     
     bintree_free(init);
 }
+
+void is_perfect_test() {
+    printf("PERFECT TEST\n");
+    btree *init = bintree_init(0);
+    btree *left = bintree_init(1);
+    btree *right = bintree_init(2);
+
+    printf("1, %zu\n", is_perfect(init));    
+    init->left  = left;
+    printf("0, %zu\n", is_perfect(init)); 
+    init->right = right;
+    printf("1, %zu\n", is_perfect(init));
+    
+    btree *leftleft = bintree_init(3);
+    btree *leftright = bintree_init(4);
+    btree *rightleft = bintree_init(5);
+    btree *rightright = bintree_init(6);
+    init->left->left = leftleft;
+    printf("0, %zu\n", is_perfect(init)); 
+    init->left->right = leftright;
+    printf("0, %zu\n", is_perfect(init)); 
+    init->right->left = rightleft;
+    printf("0, %zu\n", is_perfect(init)); 
+    init->right->right = rightright;
+    printf("1, %zu\n", is_perfect(init)); 
+    
+    bintree_free(init);
+}

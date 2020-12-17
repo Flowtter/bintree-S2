@@ -19,5 +19,6 @@ void breadth_first_search(btree *bintree);
 size_t equality(btree *bintree1, btree *bintree2);
 size_t is_sub_tree(btree *bintree1, btree *bintree2);
 size_t is_degenerate(btree *bintree1);
+size_t is_perfect(btree *bintree1);
 
 #endif // BINARY_TREE
