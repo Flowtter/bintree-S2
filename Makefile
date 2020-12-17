@@ -20,5 +20,5 @@ all:
 test:
 	$(CC) $(S_FILES) $(S_FILES_TEST) $(H_FILES_TEST) -o bintreetest $(DBGCFLAGS) $(CPPFLAGS)
 
-format: src/*.c include/*.h
+format: src/*.c include/*.h test/*.c test/*.h
 	@clang-format --style=file -i $^

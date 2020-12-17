@@ -1,9 +1,6 @@
 #ifndef QUEUE
 #define QUEUE
 
-#include <stdio.h>
-#include <stdlib.h>
-
 typedef struct queue queue;
 struct queue {
     void *self;

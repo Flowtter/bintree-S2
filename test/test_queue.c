@@ -1,10 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
 #include "queue.h"
 #include "binary_tree.h"
 
-#define UNUSED(x) (void)(x)
+#define UNUSED(x) (void) (x)
 
 void create_queue_test() {
-    printf("CREATE QUEUE TEST\n");
+    name("CREATE QUEUE TEST\n");
     queue *q = queue_init();
     int mon_int = 2;
     enqueue(q, &mon_int);
@@ -17,7 +20,7 @@ void create_queue_test() {
 }
 
 void create_queue_bintree_test() {
-    printf("CREATE QUEUE BINTREE TEST\n");
+    name("CREATE QUEUE BINTREE TEST\n");
     queue *q = queue_init();
     btree *bintree = bintree_init(2);
     enqueue(q, bintree);
@@ -30,7 +33,7 @@ void create_queue_bintree_test() {
 }
 
 void dequeue_test() {
-    printf("DEQUEUE TEST\n");
+    name("DEQUEUE TEST\n");
     queue *q = queue_init();
     int mon_int = 2;
     enqueue(q, &mon_int);
@@ -47,7 +50,7 @@ void dequeue_test() {
 }
 
 void queue_is_empty_test() {
-    printf("QUEUE IS EMPTY TEST\n");
+    name("QUEUE IS EMPTY TEST\n");
     queue *q = queue_init();
     printf("1, %zu\n", is_empty(q));
     int mon_int = 2;

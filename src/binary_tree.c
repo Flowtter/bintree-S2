@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "binary_tree.h"
 #include "queue.h"
 
@@ -118,5 +120,5 @@ size_t is_perfect(btree *bintree) {
                 enqueue(q, ((btree *) (elt->self))->right);
         }
     }
-    return index == counter-1;
+    return index == counter - 1;
 }

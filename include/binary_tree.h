@@ -1,9 +1,6 @@
 #ifndef BINARY_TREE
 #define BINARY_TREE
 
-#include <stdio.h>
-#include <stdlib.h>
-
 typedef struct bintree btree;
 struct bintree {
     int key;
